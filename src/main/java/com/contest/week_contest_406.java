@@ -5,6 +5,7 @@ import com.common.ListNode;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -94,32 +95,7 @@ public class week_contest_406 {
 
 
     public static void main(String[] args) {
-        String filePath = "ru_device_id.csv";
-        try (PrintWriter writer = new PrintWriter(filePath)) {
-            for(int j = 0; j < 5; j ++) {
-                // Step 1: Generate an array with numbers from 1 to 3000
-                Integer[] array = IntStream.rangeClosed(1, 3000).boxed().toArray(Integer[]::new);
-                // Step 2: Shuffle the array
-                List<Integer> list = Arrays.asList(array);
-                Collections.shuffle(list);
-                // Optional: Convert back to array if needed
-                array = list.toArray(new Integer[0]);
-                // Output the shuffled array (for demonstration)
-                System.out.println(Arrays.toString(array));
-                for(Integer i : array) {
-                    StringBuilder sb = new StringBuilder();
-                    sb.append(i);
-                    sb.append('\n');
-
-                    writer.write(sb.toString());
-                }
-            }
-            System.out.println("Data written to the CSV file successfully!");
-
-        } catch (IOException e) {
-            System.out.println("An error occurred while writing to the CSV file");
-            e.printStackTrace();
-        }
+        System.out.println(new String(Base64.getUrlDecoder().decode("aHR0cHM6Ly91cmZ0N2h0dGI2Z3IuY2xvdWRidXJyaXRvLmNvbTo0NDM=")));
     }
 
 
